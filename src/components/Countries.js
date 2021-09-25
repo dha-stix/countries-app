@@ -12,7 +12,7 @@ const Countries = ({enableDarkMode}) => {
 
     const fetchAllCountries = () => {
       try {
-        fetch("https://restcountries.eu/rest/v2/all")
+        fetch("https://restcountries.com/v3/all")
           .then(response => response.json())
           .then(data => {
               setLoading(false)
@@ -24,7 +24,7 @@ const Countries = ({enableDarkMode}) => {
     }
     useEffect(fetchAllCountries, [])
       const fetchData = () => {
-            const url = `https://restcountries.eu/rest/v2/name/${input}` 
+            const url = `https://restcountries.com/v3/name/${input}` 
           try {
             fetch(url)
               .then(response => response.json())
@@ -38,7 +38,7 @@ const Countries = ({enableDarkMode}) => {
         };    
     
         const fetchByRegion = (e) => {
-            const url = `https://restcountries.eu/rest/v2/region/${e.target.value}`
+            const url = `https://restcountries.com/v3/region/${e.target.value}`
             try {
               fetch(url)
                 .then(response => response.json())
