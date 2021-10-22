@@ -1,16 +1,20 @@
-import './App.css';
-import Homepage from "./components/Homepage"
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
+import {BrowserRouter as Router, Route} from "react-router-dom"
+import Detail from "./components/Detail";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import Body from "./components/Body";
+
+
+
 function App() {
-  return  (
+  return (
     <Router>
-        <Switch>
-            <Route exact path="/" component={Homepage} />
-        </Switch>
+        <Nav/>
+        <Route exact path="/" component={Body}/>
+        <Route path="/country/:countryName" component={Detail}/>
+        <Footer/>
     </Router>
-  )
-
-
+  );
 }
 
 export default App;
